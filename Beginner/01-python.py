@@ -27,3 +27,6 @@ for i in range(number):
         print('number greater than 10')
         
 print(array)
+
+#----------------------------------------------
+
