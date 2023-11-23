@@ -1,6 +1,7 @@
 # from functools import reduce
 
-# nums = [10,4,8,3]
+nums = [10,4,8,3]
+print(nums.index(10))
 # maximus = max(nums)
 
 # leftSum = reduce(lambda a, b: a+b, nums)
