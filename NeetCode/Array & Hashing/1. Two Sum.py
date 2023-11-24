@@ -26,7 +26,7 @@ def twoSum(nums, target):
         
         for j in range(i+1, len(nums)):
             if nums[i]+nums[j] == target:
-                return [i, j]
+                print([nums[i], nums[j]])
     return False
 
 
@@ -52,4 +52,4 @@ def twoSum3(nums, target):
 
 
 
-print(twoSum3([2,7,11,15], 9))
+print(twoSum([-3, 8, 3, 7, 6, 2, 4, 1], 5))
