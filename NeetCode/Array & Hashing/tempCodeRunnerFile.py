@@ -1,0 +1,1 @@
+checkRows(board) and checkColumns(board)
