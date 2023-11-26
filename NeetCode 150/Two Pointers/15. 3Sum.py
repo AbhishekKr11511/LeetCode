@@ -24,3 +24,35 @@ Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 '''
+# Brute force method, has time complexity of O(n^3)
+def threeSum(nums):
+    length = len(nums)
+    array = {}
+    for i in range(length):
+        for j in range(i+1,length):
+            for k in range(j+1,length):
+                if nums[i]+nums[j]+nums[k] == 0:
+                    array.add(sorted([nums[i], nums[j], nums[k]]))
+    return array
+
+def threeSum2(nums):
+    newSet = set()
+    result = []
+    newSet.update(nums)
+    print("newSet : ", newSet)
+    for n in newSet:
+        find = -n
+        subSet = set()
+        subSet.update(newSet)
+        subSet.remove(n)
+        print("subSet : ", subSet)
+        for m in subSet:
+            diff = find - m
+            if diff in subSet:
+                result.append([n,m, diff])
+    return result
+
+
+
+print(threeSum([-1,0,1,2,-1,-4]))
+# print(threeSum([0,0,0]))

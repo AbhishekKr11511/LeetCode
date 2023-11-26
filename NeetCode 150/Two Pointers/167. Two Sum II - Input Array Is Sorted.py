@@ -23,9 +23,24 @@ Input: numbers = [-1,0], target = -1
 Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 '''
+# Brute Force 
+# Time complexity = O(n)
+def twoSumEhh(target, numbers):
+    i = 0
+    j = len(numbers)-1
+    while i < j:
+        while j > i:
+            if numbers[i]+numbers[j] == target:
+                return [i+1, j+1]
+            elif numbers[i] + numbers[j] < target:
+                i+=1
+            elif numbers[i] + numbers[j] > target:
+                j-=1
+
 
 # Kinda same solution as Two sum
 # Time Complexity = O(n)
+
 def twoSum(target, numbers):
     hashMap = {}
     for i,n in enumerate(numbers):
@@ -35,4 +50,5 @@ def twoSum(target, numbers):
         else:
             return [hashMap[diff]+1, i+1]
 
-print(twoSum(9,[2,7,11,15]))
+print(twoSum(9, [1,3,4,5,7,10,11]))
+print(twoSumEhh(9, [1,3,4,5,7,10,11]))
