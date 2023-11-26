@@ -26,7 +26,7 @@ def printNodesAtKHeight(root, k, height=0):
     
     printNodesAtKHeight(root.left, k, height+1)
     printNodesAtKHeight(root.right, k, height+1)
-    
+
 
 myRoot = Node(10)
 myRoot.left = Node(5)
