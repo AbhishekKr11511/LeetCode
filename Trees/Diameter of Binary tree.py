@@ -58,3 +58,5 @@ thisRoot.left.right.right.right = Node(10)
 
 print(maxDiameter(myRoot))
 print(maxDiameter(thisRoot))
+
+# Time complexity is O(n^2 )
