@@ -1,0 +1,8 @@
+myRoot.left.left.left = Node(1)
+# myRoot.left.left.right = Node(2)
+# myRoot.left.right.left = Node(3)
+# myRoot.left.right.right = Node(4)
+# myRoot.right.left.left = Node(5)
+# myRoot.right.left.right = Node(6)
+# myRoot.right.right.left = Node(7)
+# myRoot.right.right.right = Node(8)
