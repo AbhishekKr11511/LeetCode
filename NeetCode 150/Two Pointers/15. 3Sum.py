@@ -27,32 +27,36 @@ Explanation: The only possible triplet sums up to 0.
 # Brute force method, has time complexity of O(n^3)
 def threeSum(nums):
     length = len(nums)
-    array = {}
+    array = []
     for i in range(length):
         for j in range(i+1,length):
             for k in range(j+1,length):
                 if nums[i]+nums[j]+nums[k] == 0:
-                    array.add(sorted([nums[i], nums[j], nums[k]]))
+                    array.append(sorted([nums[i], nums[j], nums[k]]))
     return array
 
 def threeSum2(nums):
-    newSet = set()
-    result = []
-    newSet.update(nums)
-    print("newSet : ", newSet)
-    for n in newSet:
-        find = -n
-        subSet = set()
-        subSet.update(newSet)
-        subSet.remove(n)
-        print("subSet : ", subSet)
-        for m in subSet:
-            diff = find - m
-            if diff in subSet:
-                result.append([n,m, diff])
-    return result
+    nums.sort()
+    myMap = []
+    for i,a in enumerate(nums):
+        if i > 0 and a==nums[i-1]:
+            continue
+        l,r = i+1, len(nums)- 1
+        while l<r:
+            threeSum = a + nums[l] + nums[r]
+            if threeSum > 0:
+                r -= 1
+            elif threeSum < 0:
+                l += 1
+            else:
+                myMap.append([a,nums[l], nums[r]])
+                l += 1
+                while nums[l] == nums[l-1]:
+                    l += 1
+    return myMap
 
 
 
-print(threeSum([-1,0,1,2,-1,-4]))
+
+print(threeSum2([-1,0,1,2,-1,-4]))
 # print(threeSum([0,0,0]))
