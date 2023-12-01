@@ -17,4 +17,5 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 There may exists other ways to achieve this answer too.
 '''
 
-def characterReplacement(s, k)
+def characterReplacement(s, k):
+    
