@@ -18,6 +18,10 @@ Output: 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 '''
+
+# Solution
+# Time complexity = O(n)
+
 from collections import deque
 
 def lengthOfLongestSubstring(s):
@@ -40,16 +44,5 @@ def lengthOfLongestSubstring(s):
             templength += 1
     return maxlength
 
-def lengthOfLongestSubstring2(s):
-    i, j = 0, 1
-    maxlength = 0
-    templength = 0
-    while j<len(s):
-        if s[i] == s[j]:
-            i += 1
-            j += 1
-        else:
-            templength += 1
-            j += 1
 
 print(lengthOfLongestSubstring("bbbbb"))
