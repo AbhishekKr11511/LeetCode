@@ -23,3 +23,11 @@ Input: n = 11111111111111111111111111111101
 Output: 31
 Explanation: The input binary string 11111111111111111111111111111101 has a total of thirty one '1' bits.
 '''
+def hammingWeight(n):
+    count = 0
+    while n:
+        count += n%2
+        n = n >> 1
+    return count
+
+print(hammingWeight(00000000000000000000000010000000))
