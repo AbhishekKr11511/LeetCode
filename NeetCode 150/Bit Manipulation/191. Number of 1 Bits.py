@@ -26,8 +26,8 @@ Explanation: The input binary string 11111111111111111111111111111101 has a tota
 def hammingWeight(n):
     count = 0
     while n:
-        count += n%2
-        n = n >> 1
+        n = n & (n-1)
+        count += 1
     return count
 
-print(hammingWeight(00000000000000000000000010000000))
+print(hammingWeight(0b00000000000000000000000010001000))
