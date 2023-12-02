@@ -47,3 +47,12 @@ print(nums.index(10))
 arr = list(map(str, input()))
 newArr = list(map(lambda x:x.swapcase(), arr))
 print("".join(newArr))
+
+
+my_dict = {'A': 10, 'B': 5, 'C': 8, 'D': 12, 'E': 7}
+
+max_pair = max(my_dict.items(), key=lambda x: x[1])
+
+max_key, max_value = max_pair
+
+print(f"The key with the maximum value is '{max_key}' with a value of {max_value}.")

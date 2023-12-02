@@ -18,4 +18,23 @@ There may exists other ways to achieve this answer too.
 '''
 
 def characterReplacement(s, k):
+    countMap = {}
+    i = 0
+    j = 0
+    maximumResult = 0
+    maxFreq = 0
+    while j < len(s):
+        countMap[s[j]] = countMap.get(s[j], 0) + 1
+        
+        maxFreq = max(list(countMap.values()))
+        if k >= j - i + 1 - maxFreq:
+            maximumResult = j-i+1
+            j += 1
+        else:
+            i += 1
+            j += 1
+            countMap[s[i-1]] = countMap.get(s[i-1], 0) - 1
     
+    return maximumResult
+
+print(characterReplacement("AABABBA", 1))
