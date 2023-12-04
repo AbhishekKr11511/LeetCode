@@ -45,7 +45,7 @@ class MinStack(object):
         return None
 
     def pop(self):
-        if self.minimum[-1] == self.stack.pop():
+        if self.minimum[-1] == self.stack[-1]:
             self.stack.pop()
             self.minimum.pop()
         else:
@@ -62,16 +62,26 @@ class MinStack(object):
     
     def display(self):
         return self.stack
+    
+    def displayMinStack(self):
+        return self.minimum
 
 
 myStack = MinStack()
 print(myStack.push(-2))
 print(myStack.push(0))
 print(myStack.push(-3))
+
 print(myStack.display())
-print(myStack.getMin())
-print(myStack.pop())
-print(myStack.display())
-print(myStack.top())
+print(myStack.displayMinStack())
+
 print(myStack.getMin())
 
+myStack.pop()
+
+print(myStack.display())
+print(myStack.displayMinStack())
+
+print(myStack.top())
+
+print(myStack.getMin())
