@@ -15,12 +15,12 @@ Output: -1
 Explanation: 2 does not exist in nums so return -1
 '''
 def search(nums, target):
-    if len(nums) == 0:
-        return -1
     start = 0
     end = len(nums)
     mid = (start + end) // 2
-    while start <= mid and end >= mid:
+    if end-start <= 1 and nums[mid] != target:
+        return -1
+    while target >= nums[start] and nums[end-1] >= target:
         if nums[mid] == target:
             return mid
         elif nums[mid] < target:
@@ -32,4 +32,15 @@ def search(nums, target):
             mid = (start+end)//2
     return -1
 
-print(search([-1,0,3,5,9,12],3))
+def search2(nums, target):
+    if target < nums[0] or target > nums[-1]:
+        return -1
+    mid = len(nums) // 2
+    if nums[mid] == target:
+        return mid
+    elif nums[mid] < target:
+        return search2(nums[:mid], target)
+    else:
+        return search2(nums[mid:], target)
+
+print(search2([-1,0,3,5,9,12],3))
